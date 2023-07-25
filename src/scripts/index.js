@@ -126,7 +126,7 @@ function handleData(id, data) {
     const currentPageURL = window.location.href;
     // Extract the name from the URL
     const urlParts = currentPageURL.split('.');
-    const name = urlParts[0].split('/').at(-1); 
+    const name = urlParts[2].split('/').at(-1); 
     if(name === "destination"){
         handleDestData(data.destinations,id);
     }else if(name === "technology"){
