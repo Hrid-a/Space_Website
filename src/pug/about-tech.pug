@@ -1,0 +1,19 @@
+div.technology  
+    .img-container 
+    .tabs-container 
+        ul
+            -tabs = ["Launch vehicle", "Spaceport", "Space capsule"]
+            each tab,index  in tabs 
+                if tab === "Launch vehicle" 
+                    li.active
+                        a(href=`#${tab}`)= index + 1
+                else 
+                    li 
+                        a(href=`#${tab}`)= index + 1
+
+        section.tab-panels
+            article.tab-panel 
+                span THE TERMINOLOGY…
+                h1.tab-panel__title Launch vehicle
+                p.tab-panel__discription "A launch vehicle or carrierrocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!"
+                

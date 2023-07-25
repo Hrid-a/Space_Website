@@ -1,0 +1,47 @@
+@use "./abstracts/variables" as *;
+@use "./abstracts/mixins" as *;
+body {
+    font-family: $font-family;
+    background-image: url(../assets/technology/background-technology-desktop.jpg);
+    background-position: center top;
+    background-repeat: no-repeat repeat;
+    background-size: cover;
+
+    @media screen and (max-width:991px) {
+        background-image: url(../assets/technology/background-technology-tablet.jpg);
+    }
+    @media screen and (max-width:767px) {
+        background-image: url(../assets/technology/background-technology-mobile.jpg);
+    }
+}
+
+.tab-panel {
+    span {
+        color: #D0D6F9;
+        text-align: center;
+        font-family: $second-font;
+        font-size: 0.875rem;
+        font-weight: 400;
+        letter-spacing: 0.14763rem;
+        @include media-query(tablet){
+            font-size: 1rem;
+            letter-spacing: 0.16875rem;
+        }
+    }
+    #{&}__title {   
+        font-size: 1.5rem;
+        @include media-query(tablet){
+            font-size: 2.5rem;
+        }
+        @include media-query(desktop){
+            font-size: 3.5rem;
+            text-align: start;
+        }
+    }
+    #{&}__discription {
+        &::after {
+            width: 0 ;
+            height: 0;
+        }
+    }
+}

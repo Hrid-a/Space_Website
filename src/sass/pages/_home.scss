@@ -1,0 +1,99 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+main {
+    @include media-query(phone){
+        padding-top: 2.12rem;
+    }
+    @include media-query(tablet){
+        padding-top: 6.62rem;
+    }
+
+    @include media-query(desktop){
+        padding-top: 12.12rem;
+    }
+
+    .container {
+        display: grid;
+        @media screen and (max-width:991px) {
+            place-content: center;
+        }
+
+        @media screen and (min-width:992px) {
+            grid-template-columns: 6.87rem 1fr 1fr;
+        }
+        .content {
+            width: 20.4375rem;
+            @media screen and (min-width:786px) {
+                width: 28.125rem;
+            }
+            @include flex(center, center);
+            flex-direction: column;
+            gap: 1rem;
+            @media screen and (min-width:786px) {
+                gap: 1.5rem;
+            }
+            span {
+                display: block;
+                color: $paragragh-color;
+                letter-spacing: 0.16875rem;
+                @include media-query(tablet){
+                    letter-spacing: 0.21094rem;
+                }
+                @include media-query(desktop){
+                    letter-spacing: 0.29531rem;
+                }
+            }
+    
+            h1 {
+                color: $heading-color;
+            }
+    
+            p {
+                color: $paragragh-color;
+            }
+        }
+
+        .home-circle {
+            width: 9.375rem;
+            height: 9.375rem;
+            border-radius: 50%;
+            margin: 5rem auto 3rem;
+            background-color: $heading-color;
+            color: #0B0D17;
+            letter-spacing: 0.07813rem;
+            @include flex(center, center);
+            position: relative;
+            cursor: pointer;
+            @include media-query(tablet){
+                width: 15.125rem;
+                height: 15.125rem;
+                font-size: 2rem;
+                letter-spacing: 0.125rem;
+                margin: 9.75rem auto 5.62rem;
+            }
+
+            @include media-query(desktop){
+                width: 17.125rem;
+                height: 17.125rem;
+                margin-right: 50px;
+            }
+
+            &::before {
+                content: "";
+                width: 0;
+                height: 0;
+                position: absolute;
+                opacity: 0.1036275252699852;
+                background-color: #FFF;
+            }
+            &:hover::before {
+                width: 27.125rem;
+                height: 27.125rem;
+                border-radius: 50%;
+                
+                @include transition(all 500ms ease-in-out);
+            }
+        }
+    }
+}

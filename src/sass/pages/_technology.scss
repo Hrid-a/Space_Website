@@ -1,0 +1,88 @@
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.technology {
+    padding-top: 2rem;
+    @include media-query(desktop){
+        padding-top: 4rem;
+        padding-left: 4rem;
+        @include flex(space-between, center);
+        gap: 3rem;
+    }
+    .img-container {
+        height: 10.625rem;
+        background-image: url(../assets/technology/image-launch-vehicle-portrait.jpg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: top center;
+        @media screen and (orientation: landscape)  {
+            background-image: url(../assets/technology/image-launch-vehicle-landscape.jpg);
+            
+        }
+
+        @include media-query(tablet){
+            height: 19.375rem;
+        }
+        @include media-query(desktop){
+            width: 32.1875rem;
+            height: 32.9375rem;
+
+            order: 1;
+        }
+    }
+    .tabs-container {
+        @include media-query(desktop){
+            @include flex(flex-start, center);
+            gap: 5rem;
+        }
+        
+    }
+    ul {
+        @include flex(center, center);
+        gap: 1rem;
+        margin-block:1rem 1.62rem;
+        
+        @include media-query(tablet){
+            margin-block: 3.5rem;
+        }
+        @include media-query(desktop){
+            flex-direction: column;
+        }
+        li{
+            width: 2.5rem;
+            aspect-ratio: 1;
+            display: grid;
+            place-items: center;
+            color: $heading-color;
+            border: 1px solid $heading-color;
+            border-radius: 50%;
+            
+            &.active,
+            &:hover {
+                background-color: $heading-color;
+                color: $primary-color;
+            }
+            @include media-query(tablet){
+                width: 3.75rem;
+            }
+            @include media-query(desktop){
+                width: 5rem;
+            }
+            a {
+                color: inherit;
+                font-family: $font-family;
+                font-size: 1rem;
+                font-weight: 400;
+                letter-spacing: 0.0625rem;
+                @include media-query(tablet) {
+                    font-size: 1.5rem
+                }
+                @include media-query(desktop) {
+                    font-size: 2rem
+                }
+            }
+        }
+    }
+}
+
+

@@ -1,0 +1,27 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as * ;
+
+.item-title {
+    color: $neutral-color;
+    letter-spacing: 0.16875rem;
+    text-transform: uppercase;
+    span:first-child {
+        margin-right: 1.12rem;
+    }
+    @include media-query(phone){
+        text-align: center;
+    }
+    @include media-query(tablet){
+        letter-spacing:  0.21094rem;
+        margin-top: 2.5rem;
+        span:first-child {
+            margin-right: 1.19rem;
+        }
+    }
+
+    @include media-query(desktop){
+        letter-spacing: 0.29531rem;
+        padding-left: 4rem;
+        padding-top: 2.25rem;
+    }
+}

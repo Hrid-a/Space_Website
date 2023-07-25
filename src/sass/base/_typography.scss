@@ -1,0 +1,212 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+@use '../abstracts/placehoders' as *;
+
+.navbar {
+    .navbar__links {
+        li {
+            a {
+                font-family: $second-font;
+                font-size: 1rem;
+                font-weight: 400;
+                @include media-query(tablet){
+                    font-size: 0.875rem;   
+                }
+            }
+            &::before {
+                font-family: $second-font;
+                font-size: 1rem;
+                font-weight: 700;
+                @include media-query(desktop){
+                    font-weight: 400;
+                } 
+            }
+        }
+    }
+}
+
+.item-title {
+    font-family: $second-font;
+    font-size: 1rem;
+    font-weight: 400;
+    span:first-child {
+        font-weight: 700;
+    }
+    @include media-query(tablet){
+        font-size: 1.25rem;
+    }
+
+    @include media-query(desktop){
+        font-size: 1.75rem;
+    }
+}
+
+main {
+    .container {
+        .content {
+            span {
+                font-family: $second-font;
+                font-size: 1rem;
+                font-weight: 400;
+                @include media-query(tablet){
+                    font-size: 1.25rem;
+                }
+                @include media-query(desktop){
+                    font-size: 1.75rem;
+                    text-align: start;
+                }
+            }
+    
+            h1 {
+                font-size: 5rem;
+                font-weight: 400;
+                line-height: 6.25rem;
+                @include media-query(tablet){
+                    font-size: 9.375rem;
+                    line-height: 9.375rem;
+                }
+                @include media-query(desktop){
+                    font-size: 9.375rem;
+                }
+            }
+    
+            p {
+                font-family: $second-font;
+                font-size: 0.9375rem;
+                font-style: normal;
+                font-weight: 400;
+                text-align: center;
+                line-height: 1.5625rem;
+                @include media-query(tablet){
+                    line-height: 1.75rem;
+                    font-weight: normal;
+                }
+                @include media-query(desktop){
+                    text-align: start;
+                    font-size: 1.125rem;
+                    line-height: 2rem;
+                }
+            }
+        }
+
+        .home-circle {
+            font-size: 1.25rem;
+            font-weight: 400;
+            line-height: normal;
+            @include media-query(tablet){
+                font-size: 2rem;
+            }
+        }
+    }
+}
+
+.destination-content {
+    a {
+        font-family: $second-font;
+        font-size: 0.875rem;
+        font-weight: 400;
+        @include media-query(tablet) {
+            font-size: 1rem
+        }
+        @include media-query(desktop) {
+            font-size: 1rem
+        }
+    }
+}
+
+.crew {
+    #{&}__info {
+        div {
+            font-family: $font-family;
+            font-weight: 400;
+            .crew__info__role{
+                font-size: 1rem;
+                @include media-query(tablet){
+                    font-size: 1.5rem;
+                }
+                @include media-query(desktop){
+                    font-size: 2rem;
+                }
+            }
+            .crew__info__name {
+                font-size: 1.5rem;
+                @include media-query(tablet){
+                    font-size: 2.5rem;
+                }
+                @include media-query(desktop){
+                    font-size: 3.5rem;
+                    
+                }
+            }
+            .crew__info__bio {
+                font-family: $second-font;
+                font-size: 0.9375rem;
+                font-style: normal;
+                font-weight: 400;
+                line-height: 1.5625rem;
+                @include media-query(tablet){
+                    font-size: 1rem;
+                    line-height: 1.75rem;
+                }
+                @include media-query(desktop){
+                    font-size: 1.25rem;
+                    line-height: 2rem;
+                }
+            }
+
+        }
+    }
+}
+
+.tab-panel {
+    #{&}__title {
+        font-family: $font-family;
+        font-size: 3.5rem;
+        font-weight: 400;
+        text-align: center;
+        @include media-query(tablet){
+            font-size: 5rem;
+        }
+        @include media-query(desktop){
+            font-size: 6.25rem;
+            text-align: start;
+        }
+    }
+    #{&}__discription {
+        font-family: $second-font;
+        font-size: 0.9375rem;
+        font-weight: 400;
+        text-align: center;
+        line-height: 1.5625rem; /* 166.667% */
+        
+
+        @include media-query(tablet){
+            font-size: 1rem;
+            line-height: 1.75rem;
+        }
+        @include media-query(desktop){
+            text-align: start;
+            font-size: 1.125rem;
+            line-height: 2rem;
+        }
+    }
+    #{&}__info {
+        span {
+            font-family: $font-family;
+            font-size: 1.75rem;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            text-align: center;
+            @include media-query(desktop){
+                text-align: start;
+            }
+        }
+        span:first-of-type {
+            font-family: $second-font;
+            font-size: 0.875rem;
+        }
+        
+    }
+}
+

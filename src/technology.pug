@@ -1,0 +1,15 @@
+doctype html
+html 
+    head 
+        include ./pug/head.pug
+        link(rel="stylesheet", href="css/technology.css")
+        script(type="text/javascript" src="./scripts/index.js" defer)
+    body 
+        include  ./pug/header.pug
+        +heading("technology")
+        section 
+            .container 
+                .item-title 
+                    span 03
+                    span Space launch 101
+                include ./pug/about-tech.pug

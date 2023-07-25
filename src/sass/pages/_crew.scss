@@ -1,0 +1,85 @@
+@use "../abstracts/placehoders" as *;
+@use "../abstracts/mixins" as *;
+@use "../abstracts/variables" as *;
+
+.crew {
+    padding-block: 2rem 6.5rem;
+    @include flex(center, center);
+    flex-direction: column;
+    gap: 2rem;
+    @include media-query(tablet){
+        padding-block: 3.75rem 0rem;
+    }
+    @include media-query(desktop){
+        padding-left: 4rem;
+        padding-block: 9.62rem 0rem;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: 15rem;
+    }
+    #{&}__image--container {
+        @include media-query(phone){
+            width: 11.07019rem;
+        }
+        @include media-query(tablet){
+            width: 23rem;
+        }
+        @media screen and (min-width:768px) {
+            order: 1;
+            width: 20rem;
+        }
+    }
+
+    #{&}__info {
+        @include flex(center, center);
+        flex-direction: column;
+        gap: 1rem;
+        @include media-query(desktop){
+            align-items: start;
+        }
+        ul {
+            @include flex(center, center);
+            gap: 1rem;
+            padding-block-end: 1rem;
+            li {
+                width: 1rem;
+                aspect-ratio: 1;
+                background-color: $heading-color;
+                opacity: 0.4951259195804596;
+                border-radius: 50%;
+                &.active {
+                    opacity: 1;
+                    background-color: $neutral-color;
+                }
+            }
+            @media screen and (min-width:768px) {
+                order: 1;
+            }
+        }
+        div {
+            color: $heading-color;
+            .crew__info__role{
+                opacity: 0.4951259195804596;
+                text-transform: uppercase;
+                @include media-query(desktop){
+                    display: block;
+                }
+            }
+            .crew__info__name {
+                text-transform: uppercase;
+                margin-bottom: 1rem;
+            }
+            .crew__info__bio {
+                width: 15.4375rem;
+                color: #D0D6F9;
+                @include media-query(tablet){
+                    width: 22.4375rem;
+                }
+                @include media-query(desktop){
+                    width: 25rem;
+                }
+            }
+
+        }
+    }
+}

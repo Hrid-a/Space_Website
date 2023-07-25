@@ -1,0 +1,37 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/placehoders" as *;
+@use "../abstracts/mixins" as *;
+
+header {
+    @include media-query(phone){
+        padding-inline: 1.5rem;
+    }
+
+    @include media-query(desktop){
+        padding: 2.5rem;
+    }
+
+    .container {
+        @include flex(space-between, center);
+        .nav-mobile-toggle{
+            display: none;
+            @include media-query(phone){
+                display: block;
+                cursor: pointer;
+                width: 2rem;
+                aspect-ratio: 1;
+                background-image: url(../assets/shared/icon-hamburger.svg);
+                background-repeat: no-repeat;
+                position: absolute;
+                top: 36px;
+                right: 24px;
+                z-index: 100;
+            }
+            &[aria-hidden="false"]{
+                background-image: url(../assets/shared/icon-close.svg);
+            }
+        }
+        
+    }
+}
+

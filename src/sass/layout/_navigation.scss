@@ -1,0 +1,83 @@
+@use '../abstracts/mixins' as *;
+@use '../abstracts/variables' as *;
+@use '../abstracts/placehoders' as *;
+.navbar {
+    height: 96px;
+    .navbar__links {
+        @include flex(center, center);
+        gap: 2.31rem;
+        counter-reset: my-counter -1;
+        @include media-query(desktop){
+            gap: 4.94rem;
+        }
+        
+        li {
+            padding-block: 2.30rem;
+            overflow: hidden;
+            position: relative;
+            cursor: pointer;
+            counter-increment: my-counter;
+            a {
+                @extend %nav-item;
+                letter-spacing: 0.16875rem;
+            }
+            &::before {
+                @include media-query(desktop){
+                    @include numbering;
+                }
+                @include media-query(phone){
+                    @include numbering;
+                }  
+            }
+            
+            
+            &::after {
+                @include media-query(desktop){
+                    @include pseudo;
+                }
+                @include media-query(tablet){
+                    @include pseudo;
+                }
+            }
+
+            &:hover::after, &.active::after {
+                    left: 0;
+                
+            }
+        }
+
+        @include media-query(phone){
+            flex-direction: column;
+            align-items: start;
+            position: fixed;
+            right: 0;
+            top: 0rem;
+            width: 50%;
+            height: 100vh;
+            height: 100svh;
+            padding-left: 2rem;
+            background: rgba(255, 255, 255, 0.04);
+            backdrop-filter: blur(40.774227142333984px);
+            z-index: 10;
+            &.d-none {
+                display: none;
+            }
+            li {
+                padding-block: 0;
+            }
+        }
+
+        &::before {
+            @include media-query(tablet){
+                @include shape;
+                width: 28.125rem;
+            }
+            @include media-query(desktop){
+                @include shape;
+                top: 2.4rem;
+                width: 51rem;
+            }
+            
+        }
+    }
+}

@@ -1,0 +1,18 @@
+mixin heading(currentPage)
+    header 
+        .container 
+            .logo 
+                img(src="./assets/shared/logo.svg", alt="Space Logo")
+            .nav-mobile-toggle(aria-hidden="true")
+            nav.navbar 
+                ul.navbar__links.d-none
+                    - links = ["home", "destination", "crew", "technology"]
+                    each item in links
+                        if item === currentPage
+                                li.active 
+                                    a(href=`${item ==="home"?"index.html": `${item}.html`}`)=item 
+                        else
+                            li 
+                                a(href=`${item ==="home"?"index.html": `${item}.html`}`)=item 
+                        
+        

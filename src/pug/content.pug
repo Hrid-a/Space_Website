@@ -1,0 +1,25 @@
+div.destination-content 
+    .img-container 
+        img(src="./assets/destination/image-moon.png", alt="moon")
+    .tabs-container 
+        ul
+            -tabs = ["Moon", "Mars", "Europa", "Titan"]
+            each tab in tabs 
+                if tab === "Moon" 
+                    li.active
+                        a(href=`#${tab}`)= tab.toUpperCase()
+                else 
+                    li 
+                        a(href=`#${tab}`)= tab.toUpperCase()
+
+        section.tab-panels
+            article.tab-panel 
+                h1.tab-panel__title MOON
+                p.tab-panel__discription See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+                div.tab-panel__info
+                    article.tab-panel__info--distance
+                        span AVG. DISTANCE
+                        span 384,400 km
+                    article.tab-panel__info--travel
+                        span Est. travel time 
+                        span 3 days

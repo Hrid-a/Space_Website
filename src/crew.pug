@@ -1,0 +1,15 @@
+doctype html
+html 
+    head 
+        include ./pug/head.pug
+        link(rel="stylesheet", href="css/crew.css")
+        script(type="text/javascript" src="./scripts/index.js" defer)
+    body 
+        include  ./pug/header.pug
+        +heading("crew")
+        section 
+            .container 
+                .item-title 
+                    span 02
+                    span Meet Your crew
+                include ./pug/crewinfo.pug 
